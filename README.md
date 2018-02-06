@@ -18,51 +18,13 @@ This is the checklist version of process for clean installing your Mac. To see v
   - Software Data
     - [ ] Keychains
       - [ ] Turn on iCloud Keychains sync
-    - [ ] Safari
-      - [ ] [Backup Bookmarks](https://www.lifewire.com/back-up-or-move-safari-bookmarks-to-new-mac-2260891) from `~/Library/Safari/Bookmarks.plist`
-      - [ ] Backup Browse History from `~/Library/Safari/History*`
-      - [ ] Backup extensions from `~/Library/Safari/Extensions`
-    - [ ] iTunes
-      - [ ] Backup iTunes Library folder `iTunes` from `~/Music`
-      - [ ] [Deauthorize Apple ID from iTunes](https://support.apple.com/en-us/HT201251)
-    - [ ] Photos
-      - [ ] Backup Photos Library file `Photos Library.photoslibrary` from `~/Pictures`
-    - [ ] Messages
-      - [ ] [Backup History](http://www.imore.com/how-view-and-move-your-imessage-history-and-attachments) from `~/Library/Messages`
-    - [ ] iBooks
-      - [ ] [Backup PDFs and Books](https://deciphertools.com/blog/how-to-backup-ibooks-pdfs/)
-    - [ ] Fonts
-      - [ ] [Backup Fonts](https://discussions.apple.com/thread/737547)
-    - [ ] Dashboard Widgets
-      - [ ] Backup widgets from `~/Library/Widgets`
-    - [ ] 1Password
-      - [ ] Enable Sync
-      - [ ] Backup backup files from `~/Library/Containers/2BUA8C4S2C.com.agilebits.onepassword-osx-helper/Data/Library/Backups`
-    - [ ] Day One
-      - [ ] Enable Sync
-      - [ ] Backup backup files from `Library/Group Containers/5U8NS4GX82.dayoneapp2/Data/Backup`
-    - [ ] Money Pro
-      - [ ] Enable Sync
-      - [ ] Manually backup from iOS app
-    - [ ] Dictionary
-      - [ ] [LDOCE5 Viewer](https://github.com/ciscorn/ldoce5viewer)
-      - [ ] Backup `ldoce5.data`
-    - [ ] Dash
-      - [ ] [Backup license file](https://kapeli.com/app_store_migrate)
-    - [ ] Screen Saver
-      - [ ] [Apple TV Aerial Screen Saver for Mac](https://github.com/JohnCoates/Aerial)
-      - [ ] [Google Featured Photos Screen Saver](https://plus.google.com/featuredphotos)
-    - [ ] Dotfiles
-      - [ ] ~/.ssh
-      - [ ] ~/.zshrc
-      - [ ] ~/.gitconfig
+    - [ ] Update [Dotfiles](https://github.com/TsuyoshiTsai/dotfiles)
+      - [ ] .zshrc
+      - [ ] .gitconfig
+      - [ ] .gitignore_global
+      - [ ] .npm_global (`npm list -g --depth=0`)
   - Static files
-    - [ ] ~/Desktop
-    - [ ] ~/Documents
-    - [ ] ~/Downloads
-    - [ ] ~/Movies
-    - [ ] ~/Music
-    - [ ] ~/Pictures
+    - [ ] /Documents
 - Re-installation
   - [ ] Bootable USB
     - [ ] [Download macOS High Sierra](https://itunes.apple.com/tw/app/macos-high-sierra/id1246284741?l=en&mt=12)
@@ -85,131 +47,133 @@ This is the checklist version of process for clean installing your Mac. To see v
   - [ ] Install [Homebrew](https://brew.sh) with `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
   - [ ] Install [mas-cli](https://github.com/mas-cli/mas) with `brew install mas`
   - [ ] Copy `Brewfile` to your home folder then run `brew bundle` in `Terminal`
-  - [ ] Migrate Software data
-    - [ ] Safari
-      - [ ] Migrate bookmarks
-      - [ ] Migrate history
-      - [ ] Migrate extensions
-    - [ ] iTunes
-      - [ ] Migrate iTunes Library
-      - [ ] [Authorize Apple ID to iTunes](https://support.apple.com/en-us/HT201251)
-    - [ ] Photos
-      - [ ] Migrate Photos Library
-    - [ ] Messages
-      - [ ] Migrate Message folder
-    - [ ] iBooks
-      - [ ] Migrate PDFs and Books
-    - [ ] Fonts
-      - [ ] Migrate Fonts
-    - [ ] Dashboard Widgets
-      - [ ] Install widgets to `~/Library/Widgets`
-    - [ ] 1Password
-      - [ ] Enable Sync
-      - [ ] Migrate backup files
-    - [ ] Day One
-      - [ ] Enable Sync
-      - [ ] Migrate backup files
-    - [ ] Money Pro
-      - [ ] Enable Sync
-    - [ ] Dictionary
-      - [ ] Migrate `ldoce5.data`
-      - [ ] [LDOCE5 Viewer](https://github.com/ciscorn/ldoce5viewer)
-    - [ ] Screen Saver
-      - [ ] [Apple TV Aerial Screen Saver for Mac](https://github.com/JohnCoates/Aerial)
-      - [ ] [Google Featured Photos Screen Saver](https://plus.google.com/featuredphotos)
-    - [ ] Dotfiles
-      - [ ] ~/.ssh
-      - [ ] ~/.zshrc
-      - [ ] ~/.gitconfig
-  - [ ] Migrate static files
-    - [ ] ~/Desktop
+  - [ ] Software data
+    - [ ] Download [Dotfiles](https://github.com/TsuyoshiTsai/dotfiles)
+      - [ ] .ssh
+        - `ssh-keygen -t rsa -b 4096 -C "{email}"`
+        - paste `~/.ssh/id_rsa.pub` content to where requires SSH Key (e.g. GitHub, GitLab)
+        - [Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
+      - [ ] .zshrc
+      - [ ] .gitconfig
+      - [ ] .gitignore_global
+      - [ ] .npm_global (`npm install -g {packages}`)
+  - [ ] Static Files
     - [ ] ~/Documents
-    - [ ] ~/Downloads
-    - [ ] ~/Movies
-    - [ ] ~/Music
-    - [ ] ~/Pictures
   - [ ] Restore Settings
     - [ ] System Preferences
       - [ ] General
-        - [ ] Use dark menu bar and Dock
-        - [ ] Recent items: None Documents, Apps, and Servers
+        - [ ] Appearance - Use dark menu bar and Dock
+        - [ ] Recent items - None Documents, Apps, and Servers
       - [ ] Desktop & Screen Saver
-        - [ ] Start after 2 Minutes
-        - [ ] Use [Apple TV Aerial Screen Saver for Mac](https://github.com/JohnCoates/Aerial)
+        - [ ] Desktop
+          - [ ] Change picture: on, Every 30 minutes
+          - [ ] Random order: on
+        - [ ] Screen Saver
+          - [ ] Start after: never
+          - [ ] Show with clock: on
+          - [ ] Use [Apple TV Aerial Screen Saver for Mac](https://github.com/JohnCoates/Aerial)
+            - [ ] Play Different Aerial On Each Display: on
+            - [ ] Cache Aerials As They Play: off
       - [ ] Dock
-        - [ ] Size: 1/3
-        - [ ] Magnification: Max
+        - [ ] Size: Arrow's left side above the last letter position of 'small'
+        - [ ] Magnification: Bottom position
         - [ ] Minimize windows into application icon: on
         - [ ] Automatically hide and show the Dock: on
+        - [ ] Show indicators for open applications: on
       - [ ] Mission Control
         - [ ] Group windows by application: on
         - [ ] Dashboard: As Overlay
         - [ ] Hot Corners
           - [ ] Top Left: Dashboard
-          - [ ] Top Right: Desktop
+          - [ ] Top Right: Mission Control
           - [ ] Bottom Left: Start Screen Saver
-          - [ ] Bottom Right: Put Display to Sleep
+          - [ ] Bottom Right: Application Windows
       - [ ] Language & Region
-        - [ ] Add `Traditional Chinese` to Preferred languages
+        - [ ] Add `Japanese`
         - [ ] Time format: 24-Hour Time
       - [ ] Security & Privacy
-        - [ ] Require password 1 minute after sleep or screen saver begins
         - [ ] Turn on [FileVault](https://www.apple.com/macos/security/)
         - [ ] Turn on Firewall
-        - [ ] Enable location for Weather, Siri
+        - [ ] Enable location for Weather
         - [ ] System Service: Show location icon in menu bar
       - [ ] Notification
         - [ ] Turn on Do Not Disturb
-        - [ ] Allow repeated calls
+          - [ ] From 01:00 to 08:00
+          - [ ] When the display is sleeping: on
+          - [ ] When mirroring to TVs and projectors: on
+        - [ ] When Do not Disturb is turned on
+          - [ ] Allow repeated calls: on
+        - [ ] Turn off all apps except IMs
+      - [ ] Energy Saver
+        - [ ] Turn display off after: 30 min
+        - [ ] Power Adapter
+          - [ ] Prevent computer from sleeping automatically when the display off: on
+          - [ ] Wake for Wi-Fi network access: off
       - [ ] Keyboard
-        - [ ] Key Repeat: Fastest
-        - [ ] Delay Until Repeat: Fatest
-        - [ ] Use smart quotes and dashes: off
-        - [ ] Specify shortcuts for Spotlight, Input Method, Show Notification
-        - [ ] Full Keyboard Access: All controls
-        - [ ] Add `Zhuyin` to input sources
-        - [ ] Dictation: add English, Chinese
+        - [ ] Input Sources
+          - [ ] Add `Zhuyin`, `Japanese` (Type mode: Hiragana only), `Unicode Hex Input`
       - [ ] Trackpad
         - [ ] Turn on Look up & data detectors, Tap to click, App expose
-        - [ ] Tracking speed: 3/4
-      - [ ] Sound
-        - [ ] Show volume in menu bar
-        - [ ] Play feedback when volume is changed
+        - [ ] Turn off Scroll direction: Natural
+      - [ ] iCloud
+        - [ ] iCloud Drive (on)
+          - [ ] Weather.app
+          - [ ] Numi.app
+          - [ ] System Preferences.app
+          - [ ] Bear.app
+        - [ ] Keychain
       - [ ] Siri
+        - [ ] Enable Ask Siri: off
         - [ ] Show Siri in menu bar: off
-      - [ ] Time Machine
-        - [ ] Select backup drive
-        - [ ] Show icon in menu bar
-      - [ ] Accessibility
-        - [ ] Zoom: Enable Use scroll gesture to zoom, zoom style: picture in picture
-        - [ ] Mouse & Trackpad: Enable dragging without drag lock, Trackpad Fastest Scrolling Speed, Fastest Mouse Scrolling Speed
+      - [ ] Date & Time
+        - [ ] Clock
+          - [ ] Time options
+            - [ ] Display the time with seconds: on
+          - [ ] Date options
+            - [ ] Show the day of the week: on
+            - [ ] Show date: on
+      - [ ] Install Logitech Control Center
     - [ ] Finder
-      - [ ] Show Hard disks on desktop
-      - [ ] New finder window show Home folder
-      - [ ] Sidebar: Movies, Music, Pictures, Home folder
-      - [ ] Advanced: Show file extensions, searching current folder
-    - [ ] Safari
-      - [ ] Search engine: DuckDuckGo
-      - [ ] Show full website address
-      - [ ] Show Develop menu in menu bar
-    - [ ] iTunes
-      - [ ] iCloud Music Library: on
-    - [ ] Photos
-      - [ ] iCloud Photo Library: on
-    - [ ] Dash
-      - [ ] Install license file
+      - [ ] General
+        - [ ] Show these items on the desktop: all off
+        - [ ] New finder window show: Documents
+      - [ ] Sidebar
+        - [ ] Favorites
+          - [ ] Documents
+          - [ ] Downloads
+          - [ ] Home
+        - [ ] Shared: all on
+        - [ ] Devices
+          - [ ] Hard disks
+          - [ ] External disks
+      - [ ] Advanced
+        - [ ] Show all filename extensions
+        - [ ] When performing a search: Searching the Current Folder
+      - [ ] Keydown `Shift + Command + .` to show all hidden file
+      - [ ] Show View Options: Always open in column view: on
   - [ ] Development Environment
     - [ ] iTerm2
-      - [ ] Install `oh-my-zsh`  https://github.com/robbyrussell/oh-my-zsh
-    - [ ] Shell
-      - [ ] `maximum-awesome` : https://github.com/square/maximum-awesome
-      - [ ] remember ssh passphrase: https://www.cyberciti.biz/faq/howto-fix-macos-keeps-asking-my-ssh-passphrase-since-i-updated-to-sierra/
-      - [ ] zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
-    - [ ] Sublime Text 3
-      - [ ] Install `Package Control` via https://packagecontrol.io
-      - [ ] Install `Package Syncing`
-    - [ ] Dotfiles
-      - [ ] .gitconfig
-      - [ ] .zshrc
-      - [ ] .ssh
-    - [ ] Install ruby via rbenv `rbenv install 2.4.0`
+      - [ ] Set up theme (https://www.jianshu.com/p/563dc1da2199)
+        - [ ] Install theme for iTerm2 (dracula https://draculatheme.com/iterm/)
+        - [ ] Install `oh-my-zsh` https://github.com/robbyrussell/oh-my-zsh
+        - [ ] Install powerline fonts (12pt Meslo LG M Regular for Powerline https://github.com/powerline/fonts)
+        - [ ] Install powerline theme for oh-my-zsh https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme
+      - [ ] General
+        - [ ] Closing
+          - [ ] Confirm "Quit iTerm2 (Q)" command: off
+      - [ ] Appearance
+        - [ ] Tabs
+          - [ ] Theme: Dark
+          - [ ] Show tab bar even when there is only one tab: on
+        - [ ] Window & Tab Titles: all on
+      - [ ] Profiles
+        - [ ] General - Working Directory: Reuse previous session's directory
+        - [ ] Colors - Color Presets: Dracula
+        - [ ] Text - Font: 12pt Meslo LG M Regular for Powerline
+        - [ ] Sessions - Closing: Automatically close a session when it ends: on
+        - [ ] Keys
+          - [ ] `Alt + left`: Send Escape Sequence, Esc + b
+          - [ ] `Alt + right`: Send Escape Sequence, Esc + f
+    - [ ] Visual Studio Code
+      - [ ] Install Extension `Settings Sync` (Shan.code-settings-sync)
+      - [ ] Download setting by: `Shift + Alt + D` (need GitHub gist)
